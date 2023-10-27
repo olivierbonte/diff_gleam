@@ -1,0 +1,4 @@
+name = "Gleam"
+uuid = "4f42ae06-0800-42cd-8dc8-3595abc41fc7"
+authors = ["obonte "]
+version = "0.1.0"
