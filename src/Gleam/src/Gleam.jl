@@ -6,9 +6,14 @@ module Gleam
 #Alternatively, you can use: `using Gleam` and then code
 #´Gleam.phyiscs.calculate_lambda(example_value)` 
 
+module config
+include("config.jl")
+end
+
 module constants
 include("constants.jl")
 end
+
 module physics
 include("physics.jl")
 end
