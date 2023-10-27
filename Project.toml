@@ -2,6 +2,7 @@ name = "diff_gleam"
 authors = ["Olivier Bonte"]
 
 [deps]
+DataInterpolations = "82cc6244-b520-54b8-b5a6-8a565e85f1d0"
 DifferentialEquations = "0c46a032-eb83-5123-abaf-570d42b7fbaa"
 DrWatson = "634d3b9d-ee7a-5ddf-bec9-22491ea816e1"
 Gleam = "4f42ae06-0800-42cd-8dc8-3595abc41fc7"
