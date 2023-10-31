@@ -2,7 +2,10 @@ import Gleam.constants:
     zero_celsius_in_kelvin,
     specific_heat_air,
     air_pressure_at_sea_level,
-    specific_gravity_water_vapor
+    specific_gravity_water_vapor,
+    seconds_per_day,
+    millimeters_per_meter,
+    water_density
 
 """
     celsius_to_kelvin(Tₐ::AbstractFloat)
@@ -11,6 +14,25 @@ Convert temperature from degress Celsius to Kelvin
 """
 function celsius_to_kelvin(Tₐ::AbstractFloat)
     return zero_celsius_in_kelvin + Tₐ
+end
+
+
+"""
+    evaporation_to_mm_per_day(E::AbstractFloat, λ::AbstractFloat)
+
+Converts evaporations from W/m^2 to mm/day
+
+# Arguments
+- `E::AbstractFloat`: Evaporation [W/m^2]
+- `λ::AbstractFloat`: latent heat for water vaporaisation [J/kg]
+
+# Returns
+- `::AbstractFloat`: Evaporation [mm/day]
+
+"""
+function evaporation_to_mm_per_day(E::AbstractFloat, λ::AbstractFloat)
+    return (seconds_per_day*millimeters_per_meter*E)/
+            (λ * water_density)
 end
 
 
