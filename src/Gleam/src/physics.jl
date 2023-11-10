@@ -106,7 +106,7 @@ Calculate potential evaporation according to Priestley and Taylor (1972).
 - `Δ: AbstractFloat`: Slope of the saturated water vapour pressure to 
         temperature curve [Pa/°C]
 - `γ::AbstractFloat`: Psychrometric constant of the air [Pa/°C]
-- `α::AbstractFloat`: Priestly and Taylor constant [-]
+- `α::AbstractFloat`: Priestley and Taylor constant [-]
 
 # Returns
 - `λEₚ::AbstractFloat`: Potential evaporation [W/m^2]

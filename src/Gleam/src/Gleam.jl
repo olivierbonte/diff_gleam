@@ -14,6 +14,9 @@ module constants
 include("constants.jl")
 end
 
+module evaporation
+include("evaporation.jl")
+
 module physics
 include("physics.jl")
 end
