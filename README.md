@@ -22,7 +22,33 @@ To (locally) reproduce this project, do the following:
 This will install all necessary packages for you to be able to run the scripts and
 everything should work out of the box, including correctly finding local paths.
 
-You may notice that most scripts start with the commands:
+diff_gleam depends on some python packages, which are called from Julia using [PyCall.jl](https://github.com/JuliaPy/PyCall.jl) or are run from Python. Therefore, one first needs to set up a Python environment. For this purpose one can use conda, but [(micro)mamba](https://mamba.readthhttps//mamba.readthedocs.io/en/latest/index.htmledocs.io/en/latest/index.html) is recommended. With mamba, use following commands in the command line interface:
+```
+mamba env create -f environment.yml
+mamba activate diff_gleam_python
+```
+After activating the environment, it should be passed to Pycall.jl as follows:
+
+```julia
+julia # start Julia session
+
+julia> using DrWatson
+julia> @quickactivate "diff_gleam"
+julia> all_envs = read(`which python`, String)
+julia> ENV["PYTHON"] = split(all_envs, '\n')[1][1:end-1] # select first and trim backspace
+julia> import Pkg; Pkg.build("PyCall")
+julia> exit()
+
+# Now you can run your code using in a new Julia session; e.g.:
+julia
+julia> using DrWatson
+julia> @quickactivate "diff_gleam"
+julia> using PyCall
+julia> Pycall.python
+```
+Note that `which python` only works on MacOS/Linux, for Windows systems use `where python`. If the last command (`Pycall.python`) returns the path of the `diff_gleam_ptyhon.exe` conda environment, then the building of PyCall has been successful. 
+
+You may notice that most scripts start with the commands: 
 ```julia
 using DrWatson
 @quickactivate "diff_gleam"

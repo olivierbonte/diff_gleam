@@ -1,0 +1,16 @@
+name: diff_gleam_python
+channels: 
+  - conda-forge
+dependencies:
+  - python=3.10
+  - matplotlib
+  - numpy
+  - pandas
+  - xarray
+  - netCDF4
+  - ipython
+  - ipykernel
+  - jupyterlab
+  - pip
+  - pip:
+    - icoscp
