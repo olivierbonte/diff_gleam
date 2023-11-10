@@ -13,7 +13,7 @@
 # only a aerodynamic component remaining
 # -For low vegetation, 1 deviates from the classic 1.26 for wet grassland
 
-α = Dict('T' => 0.90,  # tall vegetation
+const α = Dict('T' => 0.90,  # tall vegetation
          'H' => 1.00,  # herbaceous (aka low) vegetation
          'B' => 1.26,  # bare soil
          'W' => 1.26,  # open water
@@ -26,17 +26,17 @@
 # As a consequence of this separate estimation, the transpiration needs
 # to be corrected by a fraction (beta) of the interception loss to avoid
 # the double counting of evaporation for those hours with wet canopy."
-β = 0.07
+const β = 0.07
 
 # The available energy (AE) for evaporation is equal to the net
 # radiation (Rn) minus the ground heat flux (G). Because G is assumed to
 # be a fixed fraction of Rn, also AE is a fraction (fAE) of Rn. For
 # negative Rn, G is zero and AE equals Rn.
-fAE = Dict('T'=> 0.90,  # tall vegetation
+const fAE = Dict('T'=> 0.90,  # tall vegetation
        'H'=> 0.80,  # herbaceous (aka low) vegetation
        'B'=> 0.65,  # bare soil
        'W'=> 1.00,  # open water
        'S'=> 0.80)  # snow
 
 # Soil layer depths
-layer_depths = [100., 900., 1500.]  # mm
+const layer_depths = [100., 900., 1500.]  # mm
