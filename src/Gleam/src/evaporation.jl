@@ -1,6 +1,3 @@
-"""
-Calculate the potential evporation
-"""
 import Gleam.physics:
     calculate_Δ, calculate_γ, calculate_λ,
     calculate_priestley_taylor,
